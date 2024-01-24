@@ -1,50 +1,37 @@
-const express = require('express');
-const bodyParser = require('body-parser');
-const cors = require('cors');
+require('dotenv').config()
+const express = require("express");
+const http = require("http");
+const path = require("path");
 
+const API_PORT = process.env.API_PORT || 3000;
 const app = express();
-const port = process.env.PORT || 3000;
 
-// sample datanya
-let items = [
-  { id: 1, name: 'Item 1' },
-  { id: 2, name: 'Item 2' },
-];
+// setup static content from vite build output dir in dist/ui if NODE_ENV is in development mode
+let STATIC_PATH = "../../dist/ui";
+if (process.env.NODE_ENV !== "production") {
+  STATIC_PATH = path.join(__dirname, "../../dist/ui");
+} else {
+  STATIC_PATH = path.join(__dirname, "ui");
+}
 
-// mid ware
-app.use(bodyParser.json());
-app.use(cors());
+app.use(express.static(STATIC_PATH));
 
-// route nya
-app.get('/', (req, res) => {
-  res.send('ini express api nya sudah berjalan!');
+// Setup Express routes here before starting the server
+// initial
+app.get("/api/hello", (req, res) => {
+  res.send("Hello World! how are you");
 });
 
-// mengambil semua items
-app.get('/items', (req, res) => {
-  res.json(items);
-});
+// serve all requests to index.html in production
+if (process.env.NODE_ENV === "production") {
+  app.get("*", (req, res) => {
+    res.sendFile(path.join(STATIC_PATH, "index.html"));
+  });
+}
 
-// mengambil specific item dari id
-app.get('/items/:id', (req, res) => {
-  const itemId = parseInt(req.params.id);
-  const item = items.find((item) => item.id === itemId);
 
-  if (item) {
-    res.json(item);
-  } else {
-    res.status(404).json({ error: 'Item not found' });
-  }
-});
-
-// add a new item
-app.post('/items', (req, res) => {
-  const newItem = req.body;
-  items.push(newItem);
-  res.status(201).json(newItem);
-});
-
-// start the server
-app.listen(port, () => {
-  console.log(`Server is running on port ${port}`);
+// start server
+const server = http.createServer(app);
+server.listen(API_PORT, () => {
+  console.log(`Server listening on port ${API_PORT}`);
 });
