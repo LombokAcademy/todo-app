@@ -1,8 +1,12 @@
-# React + Vite
+# ToDo APP
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Brief Description
 
-Currently, two official plugins are available:
+This repository contains the source code and documentation for the creation of the To-Do List App. This app is designed to help users manage and organize their daily tasks in an efficient and effective way.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### how to contribute
+
+1. Open terminal and clone this repository to your machine local using `git clone repositorylink`.
+2. go to the project directory wtih `cd repo-name`.
+3. Install the dependencies by using Yarn `yarn install`.
+4. to run the project use `yarn dev`,be sure to check your **package.json** file to see the names of the scripts available in your project.
