@@ -1,0 +1,16 @@
+version: "3.8"
+
+services:
+  todo-db:
+    image: mariadb:latest
+    container_name: todo-db
+    environment:
+      MARIADB_ROOT_PASSWORD: S3cret!
+      MARIADB_DATABASE: todo
+      MARIADB_USER: todo
+      MARIADB_PASSWORD: todo
+    volumes:
+      - todo-db:/var/lib/mysql
+
+volumes:
+  todo-db:
