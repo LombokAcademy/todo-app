@@ -11,6 +11,8 @@ services:
       MARIADB_PASSWORD: todo
     volumes:
       - todo-db:/var/lib/mysql
+    ports:
+      - "3307:3306"
 
 volumes:
   todo-db:
