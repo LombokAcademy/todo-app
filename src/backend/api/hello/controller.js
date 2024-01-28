@@ -1,14 +1,7 @@
-import { hello } from "./index.js";
-
-const get = async(req,res,next) => {
-    try {
-        const result = await hello()
-        res.status(200).json({
-            message : result
-        })
-    } catch (error) {
-        next(error)
+module.exports = {
+    get: (req, res) => {
+      const data = { message: "hello world!" };
+      res.status(200).json(data);
     }
-
-}
-export default{get}
+  };
+  

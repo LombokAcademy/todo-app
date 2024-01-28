@@ -1,7 +1,7 @@
-import express from "express"
-import controller from "./controller.js"
-const router = new express.Router()
+const express = require('express');
+const helloController = require('./controller');
+const router = express.Router();
 
-router.get('/api/hello', controller.get)
+router.get('/', helloController.get);
 
-export{router}
+module.exports = router;

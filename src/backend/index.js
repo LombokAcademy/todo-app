@@ -1,20 +1,11 @@
-require('dotenv').config()
-const express = require("express");
-const http = require("http");
-const path = require("path");
-
-const API_PORT = 3000;
+const express = require('express');
 const app = express();
 
+const helloRoute = require('./api/hello/route');
 
-app.get("/api/hello", (req, res) => {
-  res.status(200).json({
-    message: "hello world",
-  })
-});
+app.use('/api/hello', helloRoute);
 
-
-const server = http.createServer(app);
-server.listen(API_PORT, () => {
-  console.log(`Server listening on port ${API_PORT}`);
+const PORT = 3000;
+app.listen(PORT, () => {
+  console.log(`Server berjalan di http://localhost:${PORT}`);
 });
