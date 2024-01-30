@@ -10,3 +10,7 @@ This repository contains the source code and documentation for the creation of t
 2. go to the project directory wtih `cd repo-name`.
 3. Install the dependencies by using Yarn `yarn install`.
 4. to run the project use `yarn dev`,be sure to check your **package.json** file to see the names of the scripts available in your project.
+
+## UI Figma
+
+https://www.figma.com/file/uanLajEWX8LbTWLCVWgXUJ/Untitled?type=design&node-id=0%3A1&mode=design&t=O2tmztfTITwHOsG6-1
