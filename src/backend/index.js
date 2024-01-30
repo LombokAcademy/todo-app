@@ -18,10 +18,10 @@ app.use(express.static(STATIC_PATH));
 
 // Setup Express routes here before starting the server
 // initial
-app.get("/api/hello", (req, res) => {
-  res.send("Hello World! how are you");
-});
 
+const helloRoute = require('./api/hello/route');
+
+app.use('/api/hello', helloRoute);
 // serve all requests to index.html in production
 if (process.env.NODE_ENV === "production") {
   app.get("*", (req, res) => {
