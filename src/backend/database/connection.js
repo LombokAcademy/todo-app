@@ -9,17 +9,4 @@ const sequelize = new Sequelize({
   database: "todo",
 });
 
-async function testConnection() {
-  try {
-    await sequelize.authenticate();
-    console.log("Connection successfully.");
-  } catch (error) {
-    console.error("Connection failed : ", error);
-  } finally {
-    await sequelize.close();
-  }
-}
-
-testConnection();
-
 module.exports = sequelize;
