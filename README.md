@@ -13,4 +13,4 @@ This repository contains the source code and documentation for the creation of t
 
 ## UI Figma
 
-https://www.figma.com/file/uanLajEWX8LbTWLCVWgXUJ/Untitled?type=design&node-id=0%3A1&mode=design&t=O2tmztfTITwHOsG6-1
+[To-Do App Design](https://www.figma.com/file/uanLajEWX8LbTWLCVWgXUJ/Untitled?type=design&node-id=0%3A1&mode=design&t=246dlMDjPjH7GfTQ-1)
