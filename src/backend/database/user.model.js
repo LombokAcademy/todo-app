@@ -28,15 +28,4 @@ const User = sequelize.define("User", {
   },
 });
 
-async function createTable() {
-  try {
-    await sequelize.sync({ force: true });
-    console.log("Table User has been created!");
-  } catch (err) {
-    console.error("Failed to create table:", err);
-  }
-}
-
-createTable();
-
 module.exports = User;
