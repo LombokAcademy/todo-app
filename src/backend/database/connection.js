@@ -9,4 +9,5 @@ const sequelize = new Sequelize({
   database: "todo",
 });
 
-module.exports = sequelize;
+
+module.exports = { sequelize };
