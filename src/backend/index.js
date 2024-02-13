@@ -22,6 +22,7 @@ app.use(express.static(STATIC_PATH));
 const helloRoute = require('./api/hello/route');
 
 app.use('/api/hello', helloRoute);
+
 // serve all requests to index.html in production
 if (process.env.NODE_ENV === "production") {
   app.get("*", (req, res) => {
