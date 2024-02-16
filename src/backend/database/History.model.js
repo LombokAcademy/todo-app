@@ -3,10 +3,10 @@ const sequelize = require("./connection.js");
 
 const History = sequelize.define("History", {
   id: {
-    type: DataTypes.STRING,
+    type: DataTypes.UUID4,
     primaryKey: true,
     allowNull: false,
-    unique:true
+    unique: true,
   },
   activity: {
     type: DataTypes.STRING,
